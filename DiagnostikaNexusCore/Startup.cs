@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DiagnostikaNexusCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using DiagnostikaNexusCore.Models.hlseven;
+//using DiagnostikaNexusCore.Models.hlseven;
 using DiagnostikaNexusCore.Models.Openf;
 
 

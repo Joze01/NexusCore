@@ -11,23 +11,23 @@ public class Repuesta_Orb
     /// <summary>
     /// DEBE SER INCREMENTAL
     /// </summary>
-    long obr_1_IDOBR;
-    string obr_2_PlacerOrdeNumber;//(DetalleSoliciturd)
+    private long obr_1_IdOBR;
+    private string obr_2_PlacerOrdeNumber;//(DetalleSoliciturd)
 
-    string obr_4_1_Identifier;
-    string obr_4_2_Text;
-    string obr_4_3_NameOfCodingSystem; //L
-    string obr_4_4_AlternateIdentifier;
-    string obr_4_5_AlternateText;
-    string obr_8_ObservationEndDateTime;
-    string obr_10_CollectorIdentifier;
-    string obr_16_1_IdNumber;
-    string obr_16_2_FamilyName;
-    string obr_22_ResultReptStatusChangeDateTime;
-    string obr_24_DiagnosticServiceID; // HM= hemato, MB= microbiologia, ch=Bioquimica
-    string obr_25_ResultStatus; // = F
-    Respuesta_obx_cualitativo obx_Cualitativo;
-    List<Respuesta_obx> listObxCuantitativos;
+    private string obr_4_1_Identifier;
+    private string obr_4_2_Text;
+    private string obr_4_3_NameOfCodingSystem; //L
+    private string obr_4_4_AlternateIdentifier;
+    private string obr_4_5_AlternateText;
+    private string obr_8_ObservationEndDateTime;
+    private string obr_10_CollectorIdentifier;
+    private string obr_16_1_IdNumber;
+    private string obr_16_2_FamilyName;
+    private string obr_22_ResultReptStatusChangeDateTime;
+    private string obr_24_DiagnosticServiceID; // HM= hemato, MB= microbiologia, ch=Bioquimica
+    private string obr_25_ResultStatus; // = F
+    private Respuesta_obx_cualitativo obx_Cualitativo;
+    private List<Respuesta_obx> listObxCuantitativos;
 
 
     public Repuesta_Orb()
@@ -39,7 +39,6 @@ public class Repuesta_Orb
         //
     }
 
-    public long Obr_1_IDOBR { get => obr_1_IDOBR; set => obr_1_IDOBR = value; }
     public string Obr_2_PlacerOrdeNumber { get => obr_2_PlacerOrdeNumber; set => obr_2_PlacerOrdeNumber = value; }
     public string Obr_4_1_Identifier { get => obr_4_1_Identifier; set => obr_4_1_Identifier = value; }
     public string Obr_4_2_Text { get => obr_4_2_Text; set => obr_4_2_Text = value; }
@@ -55,4 +54,5 @@ public class Repuesta_Orb
     public string Obr_25_ResultStatus { get => obr_25_ResultStatus; set => obr_25_ResultStatus = value; }
     public Respuesta_obx_cualitativo Obx_Cualitativo { get => obx_Cualitativo; set => obx_Cualitativo = value; }
     public List<Respuesta_obx> ListObxCuantitativos { get => listObxCuantitativos; set => listObxCuantitativos = value; }
+    public long Obr_1_IdOBR { get => obr_1_IdOBR; set => obr_1_IdOBR = value; }
 }

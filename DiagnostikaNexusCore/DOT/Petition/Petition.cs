@@ -72,12 +72,12 @@ namespace DiagnostikaNexusCore.DOT.Petition
         /// <summary>
         /// Peticion de Observacion OBR
         /// </summary>
-        private List<PetitionSpm> OBRList;
+        private List<PetitionOBR> OBRList;
 
         /// <summary>
         /// Peticion de Muestras SPM
         /// </summary>
-        private List<PetitionOBR> SPMList;
+        private List<PetitionSPM> SPMList;
 
 
 

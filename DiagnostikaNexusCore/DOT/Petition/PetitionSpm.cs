@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DiagnostikaNexusCore.DOT.Petition
 {
-    public class PetitionSpm
+    public class PetitionSPM
     {
         private string spm1_id;
         private string spm2_specimenId;

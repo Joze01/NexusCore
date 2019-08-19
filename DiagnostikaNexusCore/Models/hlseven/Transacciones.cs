@@ -12,7 +12,6 @@ namespace DiagnostikaNexusCore.Models.hlseven
         public DateTime Fecha { get; set; }
         public int? Pruebas { get; set; }
         public int? Completas { get; set; }
-        public decimal? Orden { get; set; }
         public string Siapsid { get; set; }
         public int? Orc { get; set; }
         public string Ox { get; set; }

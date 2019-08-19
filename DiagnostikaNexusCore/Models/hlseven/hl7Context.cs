@@ -29,8 +29,7 @@ namespace DiagnostikaNexusCore.Models.hlseven
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=hl7;User Id=developer; Password=270494");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=hl7;User Id=developer; Password=270494;");
             }
         }
 
@@ -171,10 +170,6 @@ namespace DiagnostikaNexusCore.Models.hlseven
                     .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Orc).HasColumnName("orc");
-
-                entity.Property(e => e.Orden)
-                    .HasColumnName("orden")
-                    .HasColumnType("numeric(18, 0)");
 
                 entity.Property(e => e.Ox)
                     .HasColumnName("ox")

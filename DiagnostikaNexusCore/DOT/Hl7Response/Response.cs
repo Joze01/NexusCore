@@ -7,7 +7,7 @@ namespace DiagnostikaNexusCore.DOT.Hl7Response
 {
     public class Response
     {
-       private string msh_1_fielSeparador;
+        private string msh_1_fielSeparador;
         private string msh_2_EncodeingCaracters;
         private string msh_3_sendingApplication;
         private string msh_4_1_namespaceId;
@@ -29,7 +29,9 @@ namespace DiagnostikaNexusCore.DOT.Hl7Response
         private string orc_9_FechaDeEnvio;
         private string orc_12_1_CodigoProfesional;
         private string orc_12_2_NombreProfesional;
-        private List<Repuesta_Orb> listadDeRespuestas = new List<Repuesta_Orb>();
+        private List<OBR> listadDeRespuestas = new List<OBR>();
+
+
 
         public string Msh_1_fielSeparador { get => msh_1_fielSeparador; set => msh_1_fielSeparador = value; }
         public string Msh_2_EncodeingCaracters { get => msh_2_EncodeingCaracters; set => msh_2_EncodeingCaracters = value; }
@@ -52,6 +54,6 @@ namespace DiagnostikaNexusCore.DOT.Hl7Response
         public string Orc_9_FechaDeEnvio { get => orc_9_FechaDeEnvio; set => orc_9_FechaDeEnvio = value; }
         public string Orc_12_1_CodigoProfesional { get => orc_12_1_CodigoProfesional; set => orc_12_1_CodigoProfesional = value; }
         public string Orc_12_2_NombreProfesional { get => orc_12_2_NombreProfesional; set => orc_12_2_NombreProfesional = value; }
-        public List<Repuesta_Orb> ListadDeRespuestas { get => listadDeRespuestas; set => listadDeRespuestas = value; }
+        public List<OBR> ListadDeRespuestas { get => listadDeRespuestas; set => listadDeRespuestas = value; }
     }
 }
