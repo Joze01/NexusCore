@@ -29,7 +29,8 @@ namespace DiagnostikaNexusCore.Models.hlseven
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=localhost;Database=hl7;User Id=developer; Password=270494;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=localhost; Database=hl7; User Id=developer; password=270494;");
             }
         }
 
