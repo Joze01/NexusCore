@@ -15,9 +15,12 @@
 
 
   <ItemGroup>
-    <Folder Include="BLL\Hl7RequestParser\" />
-    <Folder Include="DOT\Petition\" />
     <Folder Include="Models\Openf\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NextLevelSeven\NextLevelSeven.csproj" />
   </ItemGroup>
 
 </Project>

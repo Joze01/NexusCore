@@ -26,30 +26,30 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
             var operfilDataContext = _contextOpenf.OperfilData;
             var ohistidxContext = _contextOpenf.Ohistidx;
 
-            var queryResult = await (from ohistidx in ohistidxContext
-                               join ot in otContext on ohistidx.IdxUnicoId equals ot.TUnicoId
-                               join oPerfilData in operfilDataContext on ot.TPerfilCodigo equals oPerfilData.CodPerfil
-                               where ot.TOrder == OrderID && ot.TFromHis == 1 && ot.TValidado == 1 && ot.TParam == oPerfilData.ParCodigo
-                               select new
-                               {
-                                   ot.TOrder,
-                                   ohistidx.IdxHistoria,
-                                   ot.TDate,
-                                   ot.TParam,
-                                   ot.Rlinea,
-                                   ot.TComentario,
-                                   ot.TPerfilCodigo,
-                                   oPerfilData.Plantilla,
-                                   oPerfilData.PantillaBel,
-                                   oPerfilData.PlantillaBse,
-                                   oPerfilData.PlantillaEid,
-                                   ot.TValidadoPor,
-                                   ot.TFromHis,
-                                   ot.TValidado
-                               }
-                               ).ToListAsync();
+            var query = (from ohistidx in ohistidxContext
+                         join ot in otContext on ohistidx.IdxUnicoId equals ot.TUnicoId
+                         join oPerfilData in operfilDataContext on ot.TPerfilCodigo equals oPerfilData.CodPerfil
+                         where ot.TOrder == OrderID && ot.TFromHis == 1 && ot.TValidado == 1 && ot.TParam == oPerfilData.ParCodigo
+                         select new
+                         {
+                             ot.TOrder,
+                             ohistidx.IdxHistoria,
+                             ot.TDate,
+                             ot.TParam,
+                             ot.Rlinea,
+                             ot.TComentario,
+                             ot.TPerfilCodigo,
+                             oPerfilData.Plantilla,
+                             oPerfilData.PantillaBel,
+                             oPerfilData.PlantillaBse,
+                             oPerfilData.PlantillaEid,
+                             ot.TValidadoPor,
+                             ot.TFromHis,
+                             ot.TValidado
+                         });
+            var result = await query.ToListAsync();
 
-            foreach (var item in queryResult)
+            foreach (var item in result)
             {
                 ResultHistory resultValue = new ResultHistory();
                 resultValue.Order = item.TOrder;
@@ -79,6 +79,5 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
 
             return resultList;
         }
-
     }
 }
