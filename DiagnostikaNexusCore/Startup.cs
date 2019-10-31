@@ -45,7 +45,7 @@ namespace DiagnostikaNexusCore
             services.AddDbContext<hl7Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<openfContext>(options =>
+            services.AddDbContext<OpenfContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("OpenfConnection")));
 
 

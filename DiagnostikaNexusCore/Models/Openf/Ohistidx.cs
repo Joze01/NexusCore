@@ -23,5 +23,6 @@ namespace DiagnostikaNexusCore.Models.Openf
         public string Poblacion { get; set; }
         public string IdxSexo { get; set; }
         public string IdxChar1 { get; set; }
+        public string Orden { get; set; }
     }
 }

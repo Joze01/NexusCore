@@ -23,14 +23,16 @@ namespace DiagnostikaNexusCore.Models.hlseven
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<EstadosTransacciones> EstadosTransacciones { get; set; }
+        public virtual DbSet<Sessions> Sessions { get; set; }
         public virtual DbSet<Transacciones> Transacciones { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost; Database=hl7; User Id=developer; password=270494;");
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=hl7;user id=developer; password=270494");
             }
         }
 
@@ -153,6 +155,22 @@ namespace DiagnostikaNexusCore.Models.hlseven
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Sessions>(entity =>
+            {
+                entity.ToTable("sessions");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Token)
+                    .HasColumnName("token")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserId)
+                    .HasColumnName("user_id")
+                    .HasMaxLength(50);
+            });
+
             modelBuilder.Entity<Transacciones>(entity =>
             {
                 entity.HasKey(e => e.Indice);
@@ -199,6 +217,23 @@ namespace DiagnostikaNexusCore.Models.hlseven
                     .HasForeignKey(d => d.Estado)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_transacciones_estadosTransacciones");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.ToTable("users");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Password)
+                    .HasColumnName("password")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserId)
+                    .HasColumnName("user_id")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
         }
     }

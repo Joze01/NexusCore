@@ -22,5 +22,10 @@ namespace DiagnostikaNexusCore.BLL.Util
         public const string ApplicationAcknowledgmeType = "AL";
 
         public const string DateFormatString = "yyyyMMddHHmm"; //Key sensitive
+
+
+
+
+        public const string ModificacionString = "OX";
     }
 }

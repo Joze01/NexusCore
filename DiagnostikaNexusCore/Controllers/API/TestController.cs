@@ -16,6 +16,7 @@ using Newtonsoft.Json.Linq;
 using DiagnostikaNexusCore.DOT.Petition;
 using Microsoft.EntityFrameworkCore;
 using DiagnostikaNexusCore.Models.Openf;
+using DiagnostikaNexusCore.Models.hlseven;
 
 namespace DiagnostikaNexusCore.Controllers.API
 {
@@ -25,31 +26,32 @@ namespace DiagnostikaNexusCore.Controllers.API
     {
         private RBDataProvider response = new RBDataProvider();
 
-        private readonly openfContext _context;
+        private readonly OpenfContext _context;
+        private readonly hl7Context _hl7Context;
 
-        public TestController(openfContext context)
+        public TestController(OpenfContext context, hl7Context hl7Context)
         {
             _context = context;
+            _hl7Context = hl7Context;
         }
-
-        // GET: api/Transacciones
+       
         [HttpGet]
-        public async Task<List<ResultHistory>> getData()
+        public async Task<List<OtPerfil>> getData()
         {
-            return await response.FindResultHistory(180817842);
+            return await _context.OtPerfil.Where(data => data.OtPerfilOrder == decimal.Parse("191028164")).ToListAsync();
+            //return await response.FindResultHistory(191027151);
         }
-
+        /*
         [HttpPost]
         public async Task<AcceptMessage> AcceptMessage() {
-            RequestBuilder requestBuilder = new RequestBuilder(_context);
+            RequestBuilder requestBuilder = new RequestBuilder(_context,_hl7Context);
             using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
              {
                 var responseBody = await reader.ReadToEndAsync();
                 return await requestBuilder.saveOrder(responseBody);
                
             }
-        }
-
+        }*/
     }
 
 

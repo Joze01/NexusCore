@@ -90,9 +90,8 @@ namespace DiagnostikaNexusCore.BLL.Hl7RequestParser
             return requestOrderMessage;
         }
 
-        public PeticionEntrante decodeOrderData(string responseString) {
-            var jsonObject = JsonConvert.DeserializeObject<PetitionElements>(responseString);
-            PeticionEntrante newOrder = this.decodeMessageData(jsonObject.Mensaje);
+        public PeticionEntrante decodeOrderData(PetitionElements jsonElements) {
+            PeticionEntrante newOrder = this.decodeMessageData(jsonElements.Mensaje);
             return newOrder;
         }
     }

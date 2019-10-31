@@ -13,9 +13,9 @@ namespace DiagnostikaNexusCore.Controllers.API
     [ApiController]
     public class His2lisController : ControllerBase
     {
-        private readonly openfContext _context;
+        private readonly OpenfContext _context;
 
-        public His2lisController(openfContext context)
+        public His2lisController(OpenfContext context)
         {
             _context = context;
         }

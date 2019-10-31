@@ -10,7 +10,7 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
 {
     public class RBDataProvider
     {
-        private readonly openfContext _contextOpenf= new openfContext();
+        private readonly OpenfContext _contextOpenf= new OpenfContext();
 
 
         /// <summary>

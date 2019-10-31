@@ -1,15 +1,16 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+
 namespace DiagnostikaNexusCore.Models.Openf
 {
-    public partial class openfContext : DbContext
+    public partial class OpenfContext : DbContext
     {
-        public openfContext()
+        public OpenfContext()
         {
         }
 
-        public openfContext(DbContextOptions<openfContext> options)
+        public OpenfContext(DbContextOptions<OpenfContext> options)
             : base(options)
         {
         }
@@ -89,7 +90,7 @@ namespace DiagnostikaNexusCore.Models.Openf
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=openf;User Id=developer; Password=270494");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=openf3;Trusted_Connection=True;user id=developer;password=270494");
             }
         }
 
@@ -1931,6 +1932,11 @@ namespace DiagnostikaNexusCore.Models.Openf
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('M')");
+
+                entity.Property(e => e.Orden)
+                    .HasColumnName("orden")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Poblacion)
                     .HasColumnName("poblacion")
