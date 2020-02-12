@@ -7,8 +7,8 @@ namespace DiagnostikaNexusCore.Models.PublicRequest
 {
     public class Checkin
     {
-        public string token { set; get; }
+        public string Token { set; get; }
         public string mensaje { set; get; }
-        public Boolean estado { set; get; }
+        public string estado { set; get; }
     }
 }

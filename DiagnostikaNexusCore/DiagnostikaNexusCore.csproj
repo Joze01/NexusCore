@@ -11,17 +11,30 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <Folder Include="BLL\Security\" />
+    <Folder Include="DTO\Hl7Response\" />
+    <Folder Include="DTO\Petition\" />
     <Folder Include="Models\hlseven\" />
     <Folder Include="Models\Openf\" />
+    <Folder Include="Models\PublicRequest\" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\..\NextLevelSeven\NextLevelSeven.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

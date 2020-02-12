@@ -36,10 +36,12 @@ namespace DiagnostikaNexusCore.Controllers.API
         }
        
         [HttpGet]
-        public async Task<List<OtPerfil>> getData()
+        public String getData()
         {
-            return await _context.OtPerfil.Where(data => data.OtPerfilOrder == decimal.Parse("191028164")).ToListAsync();
-            //return await response.FindResultHistory(191027151);
+            //return await _context.OtPerfil.Where(data => data.OtPerfilOrder == decimal.Parse("191028164")).ToListAsync();
+            
+
+            return "TEST: ";
         }
         /*
         [HttpPost]

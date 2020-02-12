@@ -7,7 +7,7 @@ namespace DiagnostikaNexusCore.Models.PublicResponses
 {
     public class AcceptMessage
     {
-        public Boolean Estado { get; set; }
+        public String Estado { get; set; }
         public string Mensaje { get; set; }
     }
 }

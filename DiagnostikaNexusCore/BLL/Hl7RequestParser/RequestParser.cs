@@ -13,11 +13,17 @@ namespace DiagnostikaNexusCore.BLL.Hl7RequestParser
     {
         private PeticionEntrante decodeMessageData(string jsonValue)
         {
-            string MessageData = jsonValue.Replace("ORC", "\rORC");
+
+            System.Diagnostics.Debug.Print(jsonValue);
+            string MessageData = jsonValue.Replace("MSH|^~\\&|SIAP", "MSH|^~\u005C&|SIAP");
+            MessageData = MessageData.Replace("\r", "");
+            System.Diagnostics.Debug.Print(MessageData);
+            MessageData = MessageData.Replace("ORC", "\rORC");
             MessageData = MessageData.Replace("OBR", "\rOBR");
             MessageData = MessageData.Replace("PID", "\rPID");
             MessageData = MessageData.Replace("PV1", "\rPV1");
             MessageData = MessageData.Replace("SPM", "\rSPM");
+            System.Diagnostics.Debug.Print(MessageData);
 
             PeticionEntrante requestOrderMessage = new PeticionEntrante();
             //System.Diagnostics.Debug.WriteLine("PETICION: " + peticion);

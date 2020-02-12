@@ -98,7 +98,7 @@ namespace DiagnostikaNexusCore.BLL.Hl7RequestParser
             if (autorizaction.validateToken(jsonObject.Token))
             {
                 RequestParser requestParser = new RequestParser();
-                resultMessage.Estado = true;
+                resultMessage.Estado = "true";
                 resultMessage.Mensaje = "OK";
                 var messageData = requestParser.decodeOrderData(jsonObject);
                 var transactionSaved = saveTransaction(messageData, jsonMessage).Result;
@@ -114,12 +114,12 @@ namespace DiagnostikaNexusCore.BLL.Hl7RequestParser
                 }
                 else
                 {
-                    resultMessage.Estado = false;
+                    resultMessage.Estado = "false";
                     resultMessage.Mensaje = "Error";
                 }
             }
             else {
-                resultMessage.Estado = false;
+                resultMessage.Estado = "false";
                 resultMessage.Mensaje = "Token invalido";
             }
             return resultMessage;

@@ -23,14 +23,14 @@ namespace DiagnostikaNexusCore.BLL.Security
             userData = JsonConvert.DeserializeObject<UserLogin>(requestBody);
             List<Users> userCount = _hl7Context.Users.Where(user => user.UserId == userData.AppUser && user.Password == userData.Password).ToList();
             Checkin checkinResult = new Checkin();
-            checkinResult.estado = false;
+            checkinResult.estado = "false";
             checkinResult.mensaje = "Permiso Denegado";
             if (userCount.Count > 0)
             {
-                checkinResult.estado=true;
+                checkinResult.estado="true";
                 checkinResult.mensaje = "OK";
                 var token = generateToken();
-                checkinResult.token = token;
+                checkinResult.Token = token;
                 createSession(token, userData.AppUser);
             }
             return checkinResult;
