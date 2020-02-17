@@ -90,7 +90,7 @@ namespace DiagnostikaNexusCore.Models.Openf
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=openf3;Trusted_Connection=True;user id=developer;password=270494");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=openf3;user id=developer;password=270494");
             }
         }
 
