@@ -39,7 +39,15 @@ namespace DiagnostikaNexusCore.Controllers.API
         public async Task<List<ResultHistory>> getDataAsync()
         {
             RBDataProvider provider = new RBDataProvider();
+            var searchResult = await provider.FindResultHistory(191028164);
+
+            var rangos = await provider.getRangosAsync(searchResult[0]);
+
+
+
             return await provider.FindResultHistory(191028164);
+
+
         }
         /*
         [HttpPost]

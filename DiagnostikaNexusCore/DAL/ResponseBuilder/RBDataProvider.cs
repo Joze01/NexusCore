@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DiagnostikaNexusCore.Models.Openf;
 using Microsoft.EntityFrameworkCore;
+using DiagnostikaNexusCore.DTO.Hl7Response;
 
 namespace DiagnostikaNexusCore.DAL.ResponseBuilder
 {
@@ -78,6 +79,32 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
             }
 
             return resultList;
+        }
+
+        public async Task<Ranges> getRangosAsync(ResultHistory resulValue)
+        {
+            // rEFERNECIAS A LAS TABLAS
+            var operfilDataContext = _contextOpenf.OperfilData;
+            Ranges rangos = new Ranges();
+
+            // Hacer un query de consulta
+            var query = (from operfilData in operfilDataContext
+                    where operfilData.CodPerfil == resulValue.Param.ToString()
+                    select new
+                    {
+                        operfilData.ValorInferior1,
+                        operfilData.ValorSuperior1
+                    });
+
+            var result = await query.ToListAsync();
+
+            foreach (var item in result)
+            {
+                rangos.ValorInferior = item.ValorInferior1;
+                rangos.ValorSuperior = item.ValorSuperior1;
+            }
+
+            return rangos;
         }
     }
 }
