@@ -36,5 +36,6 @@ namespace DiagnostikaNexusCore.DOT
         public string TFromHis { get => tFromHis; set => tFromHis = value; }
         public string TValidate { get => tValidate; set => tValidate = value; }
         public string ResponsableId { get => responsableId; set => responsableId = value; }
+        public object Tvalidadopor { get; internal set; }
     }
 }

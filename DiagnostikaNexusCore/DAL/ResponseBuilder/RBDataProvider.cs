@@ -96,6 +96,7 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
                         operfilData.ValorSuperior1
                     });
 
+
             var result = await query.ToListAsync();
 
             foreach (var item in result)
@@ -106,5 +107,54 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
 
             return rangos;
         }
+        public async Task<Responsable> getResponsableAsync(ResultHistory resulValue)
+        {
+            // REFERNECIAS A LAS TABLAS OT
+            var ot = _contextOpenf.Ot;
+            Responsable resp = new Responsable();
+
+            // Hacer un query de consulta
+            var query = (from Ot in _contextOpenf.Ot
+                         where Ot.TCustom = resulValue.Order.ToString()
+                         select new
+                         {
+                             Ot.TValidadoPor
+                         }) ;
+
+            var result = await query.ToListAsync();
+
+            foreach (var item in result)
+            {
+                resp.Validador = item.TValidadoPor; 
+              
+            }
+
+            return resp;
+        }
+        public async Task<Identificador> getIdentificadorAsync(ResultHistory resulValue)
+        {
+            // REFERNECIAS A LAS TABLAS OT
+            var oficha = _contextOpenf.Oficha;
+            Identificador Iden = new Identificador();
+
+            // Hacer un query de consulta
+            var query = (from Oficha in _contextOpenf.Oficha
+                         where Oficha.Custom = resulValue.Identification.ToString()
+                         select new
+                         {
+                              
+                         });
+
+            var result = await query.ToListAsync();
+
+            foreach (var item in result)
+            {
+                
+
+            }
+
+            return Iden;
+        }
+
     }
 }

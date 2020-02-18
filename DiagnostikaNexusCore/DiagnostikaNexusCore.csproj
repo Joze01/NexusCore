@@ -28,7 +28,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NextLevelSeven\NextLevelSeven.csproj" />
+    <ProjectReference Include="C:\Users\davv2\OneDrive\Documentos\Visual Studio 2019\NextLevelSeven\NextLevelSeven.csproj" />
   </ItemGroup>
 
 
