@@ -107,7 +107,7 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
 
             return rangos;
         }
-        public async Task<Responsable> getResponsableAsync(ResultHistory resulValue)
+       /* public async Task<Responsable> getResponsableAsync(ResultHistory resulValue)
         {
             // REFERNECIAS A LAS TABLAS OT
             var ot = _contextOpenf.Ot;
@@ -154,7 +154,7 @@ namespace DiagnostikaNexusCore.DAL.ResponseBuilder
             }
 
             return Iden;
-        }
+        }*/
 
     }
 }
